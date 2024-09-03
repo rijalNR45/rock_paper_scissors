@@ -1,3 +1,4 @@
+function main(){
 function rockPaperScissors(){
 let userChoice = prompt("Enter your choice between rock, paper and scissors:");
 let randomNumber = Math.floor((Math.random())*3);
@@ -54,8 +55,7 @@ else{
         exit;
     }
 } while(1);
-
-    
+}
    
 
 

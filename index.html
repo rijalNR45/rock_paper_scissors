@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCK PAPER SCISSORS</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
-    
-    
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="game">
+            <div class="choices">
+                <img src="rock.jpeg" alt="Rock" id="rock" class="choice">
+                <img src="paper.jpeg" alt="Paper" id="paper" class="choice">
+                <img src="scissors.png" alt="Scissors" id="scissors" class="choice">
+            </div>
+            <button onclick="main()" id="playButton">PLAY</button>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
