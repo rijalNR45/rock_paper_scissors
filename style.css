@@ -45,7 +45,7 @@ h1 {
     transform: scale(1.1);
 }
 
-button {
+.btn {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -54,9 +54,10 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
-button:hover {
+.btn:hover {
     background-color: #173616;
     color: bisque;
 }

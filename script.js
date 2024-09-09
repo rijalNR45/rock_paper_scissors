@@ -58,5 +58,35 @@ else{
 }
    
 
+//animation
 
+const imageSources = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg'
+  ];
+
+  const imageContainer = document.getElementById('image-container');
+
+  imageSources.forEach((source) => {
+    const image = document.createElement('img');
+    image.src = source;
+    imageContainer.appendChild(image);
+  });
+
+  const randomStopTime = Math.floor(Math.random() * 10000); // generate a random number between 0 and 10000
+
+  setTimeout(() => {
+    // stop the animation
+    imageContainer.style.animationPlayState = 'paused';
+  }, randomStopTime);
+
+  imageContainer.addEventListener('animationend', () => {
+    const lastStoppedImage = imageContainer.querySelector('img:last-child');
+    // store the last stopped image in a variable
+    const result = lastStoppedImage.src;
+    console.log(result);
+  });
+
+  //animation-end
 
