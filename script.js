@@ -1,92 +1,65 @@
-function main(){
+
+// const buttonToRunMain = document.querySelector("#startButton");
+// buttonToRunMain.addEventListener = ("click",rockPaperScissors());
+const userClicked = document.querySelector(".optionsContainer");
+    console.log(userClicked);
+userClicked.addEventListener("click", rockPaperScissors());
+    
 function rockPaperScissors(){
-let userChoice = prompt("Enter your choice between rock, paper and scissors:");
+
+    
+    compChoiceGeneration;
+    function compChoiceGeneration(){
+
 let randomNumber = Math.floor((Math.random())*3);
 console.log(randomNumber);
+    const compImg = document.querySelector(".animate");
 let computerChoice;
 if(randomNumber == 0){
     computerChoice = "rock";
+    console.log(computerChoice);
+    compImg.innerHTML = '<img src="rock.jpeg" class = "choice" alt="rock">';
 }
 else if(randomNumber == 1){
     computerChoice = "paper";
+    compImg.innerHTML = '<img src="paper.jpeg" class = "choice" alt="paper">';
 }
 else{
     computerChoice = "scissors";
-}
-let computerCh = "Computer's choice is: " + computerChoice + ".";
-
-let a = " Computer won!"
-let b = " You won!"
-
-if(userChoice == computerChoice){
-    alert(computerCh +  " The match is draw.");
-}
-else if(userChoice == "rock" && computerChoice == "paper"){
-    alert(computerCh + a);
-}
-else if(userChoice =="rock" && computerChoice == "scissors"){
-    alert(computerCh + b);
-}
-else if(userChoice == "paper" && computerChoice == "rock"){
-    alert(computerCh + b);
-}
-
-else if(userChoice == "paper" && computerChoice =="scissors"){
-    alert(computerCh + a);
-}
-else if(userChoice =="scissors" && computerChoice == "rock"){
-    alert(computerCh + a);
-}
-else if(userChoice == "scissors" && computerChoice == "paper"){
-    alert(computerCh + b);
-}
-else{
-    alert("result cannot be obtained");
+    compImg.innerHTML = '<img src="scissors.png" class = "choice" alt="scissors">';
 }
 }
 
-    rockPaperScissors();
-    do{
-    if(confirm("Play again?")){
-        rockPaperScissors();
-    }
-    else{
-        alert("Thanks for playing!");
-        exit;
-    }
-} while(1);
-}
-   
+};
+// let computerCh = "Computer's choice is: " + computerChoice + ".";
 
-//animation
+// let a = " Computer won!"
+// let b = " You won!"
 
-const imageSources = [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg'
-  ];
+// if(userChoice == computerChoice){
+//     alert(computerCh +  " The match is draw.");
+// }
+// else if(userChoice == "rock" && computerChoice == "paper"){
+//     alert(computerCh + a);
+// }
+// else if(userChoice =="rock" && computerChoice == "scissors"){
+//     alert(computerCh + b);
+// }
+// else if(userChoice == "paper" && computerChoice == "rock"){
+//     alert(computerCh + b);
+// }
 
-  const imageContainer = document.getElementById('image-container');
+// else if(userChoice == "paper" && computerChoice =="scissors"){
+//     alert(computerCh + a);
+// }
+// else if(userChoice =="scissors" && computerChoice == "rock"){
+//     alert(computerCh + a);
+// }
+// else if(userChoice == "scissors" && computerChoice == "paper"){
+//     alert(computerCh + b);
+// }
+// else{
+//     alert("result cannot be obtained");
+// }
 
-  imageSources.forEach((source) => {
-    const image = document.createElement('img');
-    image.src = source;
-    imageContainer.appendChild(image);
-  });
-
-  const randomStopTime = Math.floor(Math.random() * 10000); // generate a random number between 0 and 10000
-
-  setTimeout(() => {
-    // stop the animation
-    imageContainer.style.animationPlayState = 'paused';
-  }, randomStopTime);
-
-  imageContainer.addEventListener('animationend', () => {
-    const lastStoppedImage = imageContainer.querySelector('img:last-child');
-    // store the last stopped image in a variable
-    const result = lastStoppedImage.src;
-    console.log(result);
-  });
-
-  //animation-end
 
