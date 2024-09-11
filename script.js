@@ -1,97 +1,122 @@
-const optionRock = document.querySelector("#rock");
-const optionPaper = document.querySelector("#paper");
-const optionScissors = document.querySelector("#scissors");
+var inputObtained;
+var computerChoice;
+
 const options = document.querySelector(".options");
-inputTakingFromUser();
-function inputTakingFromUser(){
-    let inputObtained;
+takingInputFromUser();
+
+
+
+function takingInputFromUser(){
+    const optionRock = document.querySelector("#rock");
+    const optionPaper = document.querySelector("#paper");
+    const optionScissors = document.querySelector("#scissors");
+    var compChoiceObtained;
+    var computerChoiceX;
+
     optionRock.addEventListener('click', function() {
-    console.log("rock clicked.");
-    options.innerHTML = "<img src='rock.jpeg' class = 'afterEffect'>";
-    inputObtained = 'rock';
-    
+        console.log("rock clicked.");
+        inputObtained = 'rock';
+        optionPaper.style.visibility = 'hidden';
+        optionScissors.style.visibility = 'hidden';
+        compChoiceGeneration();
+        resultBoardAlg();
     
     
     })
-    optionPaper.addEventListener('click', () =>{
-    console.log("paper clicked.");
-    options.innerHTML = "<img src='paper.jpeg' class = 'afterEffect'>";
-    inputObtained = 'paper';
+    optionPaper.addEventListener('click', function(){
+        console.log("paper clicked.");
+        inputObtained = 'paper';
+        optionRock.style.visibility = 'hidden';
+        optionScissors.style.visibility = 'hidden';
+        compChoiceGeneration();
+        resultBoardAlg();
     })
-    optionScissors.addEventListener('click', () =>{
+
+    optionScissors.addEventListener('click', function(){
         console.log("scissors clicked.");
         inputObtained = 'scissors';
-        options.innerHTML = "<img src='scissors.png' class = 'afterEffect'>";
-        
+        optionRock.style.visibility = 'hidden';
+        optionPaper.style.visibility = 'hidden';
+        compChoiceGeneration();
+        resultBoardAlg();
     })
-            
-console.log(inputObtained);
-compChoiceGeneration();
-}
+        
+        
+        
+
+};
 
 
 
-
-// // const buttonToRunMain = document.querySelector("#startButton");
-// // buttonToRunMain.addEventListener = ("click",rockPaperScissors());
-// const userClicked = document.querySelector(".optionsContainer");
-//     console.log(userClicked);
-// userClicked.addEventListener("click", rockPaperScissors());
-    
-// function rockPaperScissors(){
-
-    
-//     compChoiceGeneration;
     function compChoiceGeneration(){
+        console.log("second function runs!");
+
+const compRock = document.querySelector(".initialForm#rock");
+const compPaper = document.querySelector(".initialForm#paper");
+const compScissors = document.querySelector(".initialForm#scissors");
+
 
 let randomNumber = Math.floor((Math.random())*3);
 console.log(randomNumber);
-    const compImg = document.querySelector(".animate");
-let computerChoice;
+
 if(randomNumber == 0){
     computerChoice = "rock";
     console.log(computerChoice);
-    compImg.innerHTML = '<img src="rock.jpeg" class = "choice" alt="rock">';
+    compRock.classList.remove("initialForm");
+    
 }
 else if(randomNumber == 1){
     computerChoice = "paper";
-    compImg.innerHTML = '<img src="paper.jpeg" class = "choice" alt="paper">';
+    console.log(computerChoice);
+    compPaper.classList.remove("initialForm");
+    
 }
 else{
     computerChoice = "scissors";
-    compImg.innerHTML = '<img src="scissors.png" class = "choice" alt="scissors">';
+    console.log(computerChoice);
+    compScissors.classList.remove("initialForm");
+    
 }
+return computerChoice;
+};
+
+function resultBoardAlg(){
+    const resultBoard = document.querySelector(".resultBoard");
+
+    
+
+
+let resultA = " Computer won!";
+let resultB = " You won!";
+let resultC = "The match is draw!";
+
+if(inputObtained == computerChoice){
+    resultBoard.textContent = resultC;
+}
+else if(inputObtained == "rock" && computerChoice == "paper"){
+    resultBoard.textContent = resultA;
+}
+else if(inputObtained =="rock" && computerChoice == "scissors"){
+    resultBoard.textContent = resultB;
+    }
+else if(inputObtained == "paper" && computerChoice == "rock"){
+    resultBoard.textContent = resultB;
 }
 
-// let computerCh = "Computer's choice is: " + computerChoice + ".";
+else if(inputObtained == "paper" && computerChoice =="scissors"){
+    resultBoard.textContent = resultA; 
+}
 
-// let a = " Computer won!"
-// let b = " You won!"
+else if(inputObtained =="scissors" && computerChoice == "rock"){
+    resultBoard.textContent = resultA;
+}
+else if(inputObtained == "scissors" && computerChoice == "paper"){
+    resultBoard.textContent = resultB;
+}
 
-// if(userChoice == computerChoice){
-//     alert(computerCh +  " The match is draw.");
-// }
-// else if(userChoice == "rock" && computerChoice == "paper"){
-//     alert(computerCh + a);
-// }
-// else if(userChoice =="rock" && computerChoice == "scissors"){
-//     alert(computerCh + b);
-// }
-// else if(userChoice == "paper" && computerChoice == "rock"){
-//     alert(computerCh + b);
-// }
-
-// else if(userChoice == "paper" && computerChoice =="scissors"){
-//     alert(computerCh + a);
-// }
-// else if(userChoice =="scissors" && computerChoice == "rock"){
-//     alert(computerCh + a);
-// }
-// else if(userChoice == "scissors" && computerChoice == "paper"){
-//     alert(computerCh + b);
-// }
-// else{
-//     alert("result cannot be obtained");
-// }
+else{
+    exit;
+}
+};
 
 
