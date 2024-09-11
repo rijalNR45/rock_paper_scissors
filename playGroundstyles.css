@@ -81,3 +81,8 @@ h1{
 .initialForm{
    visibility: hidden;
 }
+.your_score, .comp_score{
+    text-align: center;
+    font-size: 3rem;
+    margin: 1.5rem;
+}

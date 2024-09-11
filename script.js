@@ -39,12 +39,7 @@ function takingInputFromUser(){
         resultBoardAlg();
     })
         
-        
-        
-
-};
-
-
+}
 
     function compChoiceGeneration(){
         console.log("second function runs!");
@@ -80,7 +75,8 @@ return computerChoice;
 
 function resultBoardAlg(){
     const resultBoard = document.querySelector(".resultBoard");
-
+    let userScore = 0;
+    let computerScore = 0;
     
 
 
@@ -90,31 +86,45 @@ let resultC = "The match is draw!";
 
 if(inputObtained == computerChoice){
     resultBoard.textContent = resultC;
+    
 }
 else if(inputObtained == "rock" && computerChoice == "paper"){
     resultBoard.textContent = resultA;
-}
+    computerScore += 1;
+    console.log(computerScore);
+    }
 else if(inputObtained =="rock" && computerChoice == "scissors"){
     resultBoard.textContent = resultB;
+    userScore +=1;
     }
 else if(inputObtained == "paper" && computerChoice == "rock"){
     resultBoard.textContent = resultB;
+    userScore +=1;
 }
 
 else if(inputObtained == "paper" && computerChoice =="scissors"){
     resultBoard.textContent = resultA; 
+    computerScore += 1;
 }
 
 else if(inputObtained =="scissors" && computerChoice == "rock"){
     resultBoard.textContent = resultA;
+    computerScore += 1;
 }
 else if(inputObtained == "scissors" && computerChoice == "paper"){
     resultBoard.textContent = resultB;
+    userScore +=1;
 }
 
 else{
     exit;
 }
+
+const userScoreHolder = document.querySelector(".your_score");
+userScoreHolder.textContent = userScore;
+
+const computerScoreHolder = document.querySelector(".comp_score");
+computerScoreHolder.textContent = computerScore;
 };
 
 
