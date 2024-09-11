@@ -2,25 +2,32 @@ const optionRock = document.querySelector("#rock");
 const optionPaper = document.querySelector("#paper");
 const optionScissors = document.querySelector("#scissors");
 const options = document.querySelector(".options");
-
-
-optionRock.addEventListener('click', () =>{
+inputTakingFromUser();
+function inputTakingFromUser(){
+    let inputObtained;
+    optionRock.addEventListener('click', function() {
     console.log("rock clicked.");
-    
     options.innerHTML = "<img src='rock.jpeg' class = 'afterEffect'>";
-    console.log(options.innerHTML);
+    inputObtained = 'rock';
+    
     
     
     })
-optionPaper.addEventListener('click', () =>{
+    optionPaper.addEventListener('click', () =>{
     console.log("paper clicked.");
     options.innerHTML = "<img src='paper.jpeg' class = 'afterEffect'>";
+    inputObtained = 'paper';
     })
     optionScissors.addEventListener('click', () =>{
         console.log("scissors clicked.");
+        inputObtained = 'scissors';
         options.innerHTML = "<img src='scissors.png' class = 'afterEffect'>";
+        
     })
             
+console.log(inputObtained);
+compChoiceGeneration();
+}
 
 
 
@@ -35,28 +42,27 @@ optionPaper.addEventListener('click', () =>{
 
     
 //     compChoiceGeneration;
-//     function compChoiceGeneration(){
+    function compChoiceGeneration(){
 
-// let randomNumber = Math.floor((Math.random())*3);
-// console.log(randomNumber);
-//     const compImg = document.querySelector(".animate");
-// let computerChoice;
-// if(randomNumber == 0){
-//     computerChoice = "rock";
-//     console.log(computerChoice);
-//     compImg.innerHTML = '<img src="rock.jpeg" class = "choice" alt="rock">';
-// }
-// else if(randomNumber == 1){
-//     computerChoice = "paper";
-//     compImg.innerHTML = '<img src="paper.jpeg" class = "choice" alt="paper">';
-// }
-// else{
-//     computerChoice = "scissors";
-//     compImg.innerHTML = '<img src="scissors.png" class = "choice" alt="scissors">';
-// }
-// }
+let randomNumber = Math.floor((Math.random())*3);
+console.log(randomNumber);
+    const compImg = document.querySelector(".animate");
+let computerChoice;
+if(randomNumber == 0){
+    computerChoice = "rock";
+    console.log(computerChoice);
+    compImg.innerHTML = '<img src="rock.jpeg" class = "choice" alt="rock">';
+}
+else if(randomNumber == 1){
+    computerChoice = "paper";
+    compImg.innerHTML = '<img src="paper.jpeg" class = "choice" alt="paper">';
+}
+else{
+    computerChoice = "scissors";
+    compImg.innerHTML = '<img src="scissors.png" class = "choice" alt="scissors">';
+}
+}
 
-// };
 // let computerCh = "Computer's choice is: " + computerChoice + ".";
 
 // let a = " Computer won!"
