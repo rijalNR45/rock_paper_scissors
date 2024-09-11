@@ -10,8 +10,6 @@ function takingInputFromUser(){
     const optionRock = document.querySelector("#rock");
     const optionPaper = document.querySelector("#paper");
     const optionScissors = document.querySelector("#scissors");
-    var compChoiceObtained;
-    var computerChoiceX;
 
     optionRock.addEventListener('click', function() {
         console.log("rock clicked.");
