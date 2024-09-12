@@ -1,107 +1,174 @@
-
-@media (max-width: 480px){
-    .container{
-        flex: 1 1 100%;
-        flex-direction: column;
-        
-        
-    }
-    .options, .animate{
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-}
-@media (max-width: 768px){
-    .optionsContainer{
-        flex: 1 1 100%;
-        margin: auto;
-    }
-    .options{
-        flex-direction: row;
-        
-    }
-}
-
-h1{
-    text-align: center;
-    font-weight: 750;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
     font-size: 4vw;
+    margin-top: 1rem;
+    color: #333;
 }
-.container{
+
+.container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    border: black solid 3px;
-    height: 22rem;
+    border: 3px solid black;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
 }
-.title{
+
+.title {
     font-size: 1.5rem;
+    text-align: center;
 }
-.options, .animate{
-    flex: 1;
+
+.options, .animate {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
 }
 
-.choice{
-    max-width: 16%;
-    height: auto;
-   
-    
+/* Improve image size scaling */
+.choice {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
-.your_choice, .comp_choice{
-    font-size: 2rem;
+
+.choice:hover {
+    transform: scale(1.2);
 }
-.choice:hover{
-    transform: scale(1.1);
-}
-.vs{
+
+/* Versus section */
+.vs {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding: 1rem;
 }
-.versus{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 7vw;
+
+.versus {
+    font-size: 6vw;
+    color: #ff5733;
+    text-shadow: 2px 2px 4px #999;
 }
-.result_section{
+
+/* Result Section */
+.result_section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    margin-top: 1rem;
-    min-height: 7rem;
-}
-.score_board{
-    
-    display: flex;
-    justify-content: space-evenly;
-    
-    min-width: 80%;
-    height: 2rem;
-}
-.board{
-    text-align: center;
-    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
 }
 
-.initialForm{
-   visibility: hidden;
+.score_board {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #333;
 }
-.your_score, .comp_score{
-    text-align: center;
-    font-size: 2rem;
-    margin: 1rem;
-    
-}
-.your_score{
+
+.your_score {
     color: blue;
 }
-.comp_score{
+
+.comp_score {
     color: red;
 }
-.resultBoard{
-    font-size: 2rem;
+.initialForm{
+    visibility: hidden;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6vw;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .options, .animate {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .choice {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .versus {
+        font-size: 10vw;
+    }
+
+    .score_board {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        border: none;
+    }
+
+    .options, .animate {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .choice {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .vs {
+        margin: 1rem 0;
+    }
+    
+    .score_board {
+        font-size: 1rem;
+    }
+}
+.restart{
+    
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    
+}
+.buttonHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.restart:hover{
+    background-color: #173616;
+    color: bisque;
 }

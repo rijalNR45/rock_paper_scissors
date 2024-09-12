@@ -1,3 +1,5 @@
+main();
+function main(){
 var inputObtained;
 var computerChoice;
 
@@ -139,5 +141,14 @@ else{
 }
 
 };
+}
+
+const reloadButton = document.querySelector('.restart');
+
+
+reloadButton.addEventListener('click', function() {
+  location.reload(); 
+});
+
 
 
