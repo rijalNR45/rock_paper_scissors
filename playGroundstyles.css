@@ -85,4 +85,11 @@ h1{
     text-align: center;
     font-size: 3rem;
     margin: 1.5rem;
+    
+}
+.your_score{
+    color: blue;
+}
+.comp_score{
+    color: red;
 }

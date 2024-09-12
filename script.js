@@ -123,8 +123,21 @@ else{
 const userScoreHolder = document.querySelector(".your_score");
 userScoreHolder.textContent = userScore;
 
+
 const computerScoreHolder = document.querySelector(".comp_score");
 computerScoreHolder.textContent = computerScore;
+
+const resultBoardColored = document.querySelector(".resultBoard");
+if(userScore > computerScore){
+    resultBoardColored.style.color = "blue";  
+}
+else if(userScore < computerScore){
+    resultBoardColored.style.color  = "red";
+}
+else{
+    resultBoardColored.style.color = "black";
+}
+
 };
 
 
