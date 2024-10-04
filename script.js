@@ -150,5 +150,9 @@ reloadButton.addEventListener('click', function() {
   location.reload(); 
 });
 
+function playRounds() {
+    
 
+
+}
 
